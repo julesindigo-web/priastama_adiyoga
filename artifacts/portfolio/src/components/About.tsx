@@ -9,7 +9,7 @@ const stats = [
   { value: '8+',    label: 'Years in HSE',        color: '#c8a84a' },
   { value: 'S.H.',  label: 'Sarjana Hukum',        color: '#7ab8ff' },
   { value: 'PERADI', label: 'Advocate Certified',  color: '#c8a84a' },
-  { value: 'Zero',  label: 'LTI Record',            color: '#7ab8ff' },
+  { value: 'Zero',  label: 'Lost-Time Incidents',   color: '#7ab8ff' },
 ];
 
 const identities = [

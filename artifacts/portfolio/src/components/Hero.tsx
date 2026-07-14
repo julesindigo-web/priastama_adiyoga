@@ -175,7 +175,9 @@ export function Hero() {
 
           // Head-dot: desktop only, small + faint. At 6px/0.9α it looked
           // like a loading spinner when passing near buttons.
-          if (!isNarrow) {
+          // Checked against live width (not mount-time isNarrow) so rotating
+          // a phone to portrait immediately drops the dots too.
+          if (w >= 640) {
             const hx = pts[end].x, hy = pts[end].y;
             const hg = ctx.createRadialGradient(hx, hy, 0, hx, hy, 3.5);
             hg.addColorStop(0, `${stream.color}0.5)`);
