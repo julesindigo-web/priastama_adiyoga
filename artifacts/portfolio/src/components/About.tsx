@@ -74,7 +74,7 @@ export function About() {
         </motion.div>
 
         {/* Main layout */}
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-start mb-20">
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-start mb-0">
 
           {/* LEFT: Photos */}
           <motion.div
@@ -92,8 +92,8 @@ export function About() {
               <img
                 src="/photos/profile.jpg"
                 alt="Priastama Adiyoga"
-                className="w-full h-full object-cover object-top"
-                style={{ filter: 'grayscale(15%) contrast(1.05)' }}
+                className="w-full h-full object-cover object-center"
+                style={{ filter: 'contrast(1.04) brightness(1.02)' }}
               />
               <div
                 className="absolute inset-x-0 bottom-0 h-2/5"
@@ -186,28 +186,67 @@ export function About() {
               ))}
             </div>
 
-            {/* Story */}
-            <div className="space-y-5 text-base leading-relaxed" style={{ color: 'rgba(210,225,255,0.58)', fontFamily: 'Inter, sans-serif' }}>
-              <p>
-                With over <strong style={{ color: '#eef2ff', fontWeight: 600 }}>8 years</strong> in coal mining HSE across
-                major Indonesian operations, I have built and sustained safety systems in high-risk environments where
-                precision is non-negotiable and a single lapse can be catastrophic.
-              </p>
-              <p>
-                Backed by a <strong style={{ color: '#eef2ff', fontWeight: 600 }}>Bachelor of Law (Sarjana Hukum)</strong> and
-                certified as a PERADI Advocate, my approach is grounded in rigorous regulatory compliance and epistemic
-                precision — knowing the rules before questioning them.
-              </p>
-              <p>
-                Today, I apply that same systems-thinking to the frontier of{' '}
-                <strong style={{ color: '#eef2ff', fontWeight: 600 }}>artificial intelligence</strong>. As an AI Orchestrator,
-                I direct enterprise-scale LLM workflows — proving that complex problem solving transcends domains.
-              </p>
+            {/* Story — scannable pillars */}
+            <div className="space-y-3">
+              {[
+                {
+                  icon: '⛏',
+                  color: '#c8a84a',
+                  label: 'Field Expertise',
+                  text: '8+ years building and sustaining HSE systems in coal mining operations across Kalimantan — where a single lapse can be catastrophic and zero LTI is the only acceptable outcome.',
+                },
+                {
+                  icon: '⚖',
+                  color: '#a89fd4',
+                  label: 'Legal Foundation',
+                  text: 'Sarjana Hukum (S.H.) graduate and certified PERADI Advocate — legal precision and regulatory mastery applied directly to safety compliance architecture.',
+                },
+                {
+                  icon: '🤖',
+                  color: '#7ab8ff',
+                  label: 'AI Frontier',
+                  text: 'Directing enterprise-scale LLM workflows and AI systems without writing code — proving that rigorous systems-thinking transfers across any domain.',
+                },
+              ].map((item, i) => (
+                <motion.div
+                  key={i}
+                  initial={{ opacity: 0, x: 20 }}
+                  whileInView={{ opacity: 1, x: 0 }}
+                  viewport={{ once: true }}
+                  transition={{ duration: 0.55, delay: 0.08 + i * 0.1 }}
+                  className="flex gap-4 p-4 rounded-xl"
+                  style={{
+                    background: 'rgba(238,242,255,0.022)',
+                    border: `1px solid ${item.color}1a`,
+                  }}
+                >
+                  <div
+                    className="shrink-0 w-9 h-9 rounded-lg flex items-center justify-center text-base mt-0.5"
+                    style={{ background: `${item.color}14`, border: `1px solid ${item.color}28` }}
+                  >
+                    {item.icon}
+                  </div>
+                  <div>
+                    <div
+                      className="text-xs font-bold tracking-[0.18em] uppercase mb-1.5"
+                      style={{ color: item.color, fontFamily: 'Inter, sans-serif' }}
+                    >
+                      {item.label}
+                    </div>
+                    <p
+                      className="text-sm leading-relaxed"
+                      style={{ color: 'rgba(210,225,255,0.58)', fontFamily: 'Inter, sans-serif' }}
+                    >
+                      {item.text}
+                    </p>
+                  </div>
+                </motion.div>
+              ))}
               <div
-                className="flex items-center gap-4 pt-2 text-xs tracking-[0.2em] uppercase font-semibold"
-                style={{ color: 'rgba(210,225,255,0.28)' }}
+                className="flex items-center gap-4 pt-1 text-xs tracking-[0.2em] uppercase font-semibold"
+                style={{ color: 'rgba(210,225,255,0.25)' }}
               >
-                <span style={{ width: 40, height: 1, background: 'rgba(200,168,74,0.2)', display: 'inline-block' }} />
+                <span style={{ width: 40, height: 1, background: 'rgba(200,168,74,0.18)', display: 'inline-block' }} />
                 Samarinda, Kalimantan Timur · Born 15 March 1992
               </div>
             </div>

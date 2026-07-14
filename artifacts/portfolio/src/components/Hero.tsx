@@ -245,9 +245,9 @@ export function Hero() {
   ];
 
   const roles: { label: string; color: string }[] = [
-    { label: 'HSE Manager',     color: 'rgba(210,225,255,0.80)' },
-    { label: 'OHS Specialist',  color: '#7ab8ff'                 },
-    { label: 'AI Orchestrator', color: 'rgba(210,225,255,0.80)' },
+    { label: 'Mining HSE Manager', color: '#c8a84a'                  },
+    { label: 'OHS Specialist',     color: 'rgba(210,225,255,0.52)'   },
+    { label: 'AI Orchestrator',    color: '#7ab8ff'                  },
   ];
 
   return (
@@ -471,7 +471,7 @@ export function Hero() {
             marginBottom: 'clamp(20px, 3.5vh, 36px)',
           }}
         >
-          "From mining safety to AI intelligence — where precision meets vision"
+          "8+ years of incident-free mining safety — now orchestrating enterprise AI workflows"
         </motion.p>
 
         {/* ── 6. CTAs ───────────────────────────────────────────────────────── */}

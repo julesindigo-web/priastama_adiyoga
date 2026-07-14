@@ -90,7 +90,7 @@ export function Achievements() {
                     src={item.photo}
                     alt={item.title}
                     className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
-                    style={{ filter: 'grayscale(55%) brightness(0.22) saturate(1.1)' }}
+                    style={{ filter: 'grayscale(65%) brightness(0.10) saturate(0.8)' }}
                   />
                 </div>
               )}
@@ -100,7 +100,7 @@ export function Achievements() {
                 className="absolute inset-0"
                 style={{
                   background: item.photo
-                    ? `linear-gradient(135deg, rgba(2,10,24,0.88) 0%, rgba(2,10,24,0.62) 100%)`
+                    ? `linear-gradient(135deg, rgba(2,10,24,0.97) 0%, rgba(2,10,24,0.92) 100%)`
                     : item.gradient,
                 }}
               />
