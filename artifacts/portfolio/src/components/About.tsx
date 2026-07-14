@@ -35,7 +35,7 @@ const identities = [
 
 export function About() {
   return (
-    <section id="about" className="py-36 relative overflow-hidden" style={{ background: '#020a18' }}>
+    <section id="about" className="py-24 md:py-36 relative overflow-hidden" style={{ background: '#020a18' }}>
       {/* Background glows */}
       <div className="absolute top-0 right-0 w-[600px] h-[600px] rounded-full pointer-events-none"
         style={{ background: 'radial-gradient(ellipse, rgba(200,168,74,0.06) 0%, transparent 70%)', filter: 'blur(40px)' }} />

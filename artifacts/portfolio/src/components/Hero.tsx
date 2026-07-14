@@ -95,10 +95,14 @@ export function Hero() {
     const W = () => canvas.width;
     const H = () => canvas.height;
 
-    const sparkles: Sparkle[] = Array.from({ length: 200 }, () => spawnSparkle(W(), H()));
+    // Narrow screens get fewer particles/streams, and stream head-dots are
+    // skipped entirely — a glowing dot drifting near the CTAs reads as a
+    // stray spinner/loading artifact on mobile.
+    const isNarrow = window.innerWidth < 640;
+    const sparkles: Sparkle[] = Array.from({ length: isNarrow ? 120 : 200 }, () => spawnSparkle(W(), H()));
     const streams: Stream[] = [
-      ...Array.from({ length: 10 }, () => makeStream(W(), H(), true)),
-      ...Array.from({ length: 5  }, () => makeStream(W(), H(), false)),
+      ...Array.from({ length: isNarrow ? 6 : 10 }, () => makeStream(W(), H(), true)),
+      ...Array.from({ length: isNarrow ? 3 : 5  }, () => makeStream(W(), H(), false)),
     ];
     const stars = Array.from({ length: 140 }, () => ({
       x: Math.random(), y: Math.random(),
@@ -169,14 +173,18 @@ export function Hero() {
           ctx.lineWidth = stream.width;
           ctx.stroke();
 
-          const hx = pts[end].x, hy = pts[end].y;
-          const hg = ctx.createRadialGradient(hx, hy, 0, hx, hy, 6);
-          hg.addColorStop(0, `${stream.color}0.9)`);
-          hg.addColorStop(1, 'transparent');
-          ctx.fillStyle = hg;
-          ctx.beginPath();
-          ctx.arc(hx, hy, 6, 0, Math.PI * 2);
-          ctx.fill();
+          // Head-dot: desktop only, small + faint. At 6px/0.9α it looked
+          // like a loading spinner when passing near buttons.
+          if (!isNarrow) {
+            const hx = pts[end].x, hy = pts[end].y;
+            const hg = ctx.createRadialGradient(hx, hy, 0, hx, hy, 3.5);
+            hg.addColorStop(0, `${stream.color}0.5)`);
+            hg.addColorStop(1, 'transparent');
+            ctx.fillStyle = hg;
+            ctx.beginPath();
+            ctx.arc(hx, hy, 3.5, 0, Math.PI * 2);
+            ctx.fill();
+          }
         }
       });
 
@@ -239,15 +247,15 @@ export function Hero() {
     document.getElementById(id)?.scrollIntoView({ behavior: 'smooth' });
 
   const stats = [
-    { value: '8+',  label: 'Years\u00A0HSE',       blue: false },
-    { value: '0',   label: 'LTI Record',            blue: true  },
-    { value: '30+', label: 'Certifications',        blue: false },
+    { value: '8+',  label: 'Years in HSE',        blue: false },
+    { value: '0',   label: 'Lost-Time Incidents', blue: true  },
+    { value: '30+', label: 'Certifications',      blue: false },
   ];
 
-  const roles: { label: string; color: string }[] = [
-    { label: 'Mining HSE Manager', color: '#c8a84a'                  },
-    { label: 'OHS Specialist',     color: 'rgba(210,225,255,0.52)'   },
-    { label: 'AI Orchestrator',    color: '#7ab8ff'                  },
+  const roles: { label: string; color: string; weight: number }[] = [
+    { label: 'Mining HSE Manager', color: '#c8a84a',                weight: 500 },
+    { label: 'OHS Specialist',     color: 'rgba(210,225,255,0.66)', weight: 400 },
+    { label: 'AI Orchestrator',    color: '#7ab8ff',                weight: 400 },
   ];
 
   return (
@@ -305,16 +313,17 @@ export function Hero() {
           initial={{ opacity: 0, y: 16 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.7, delay: 0.1 }}
-          className="inline-flex items-center gap-2 rounded-full"
+          className="inline-flex items-center justify-center gap-2 rounded-full"
           style={{
-            padding: '7px 18px',
-            marginBottom: 24,
+            padding: '7px 16px',
+            marginBottom: 18,
+            maxWidth: '92vw',
             border: '1px solid rgba(200,168,74,0.32)',
             background: 'rgba(200,168,74,0.07)',
             color: '#e8c870',
-            fontSize: 10,
+            fontSize: 'clamp(9px, 2.4vw, 10px)',
             fontFamily: 'Inter, sans-serif',
-            letterSpacing: '0.22em',
+            letterSpacing: '0.18em',
             fontWeight: 600,
             textTransform: 'uppercase',
             backdropFilter: 'blur(10px)',
@@ -332,7 +341,7 @@ export function Hero() {
               animation: 'pulse 2.2s ease-in-out infinite',
             }}
           />
-          Available for Opportunities
+          Open to HSE Leadership & AI Collaborations
         </motion.div>
 
         {/* ── 2. Name ───────────────────────────────────────────────────────── */}
@@ -371,7 +380,7 @@ export function Hero() {
              */
             lineHeight: 1.2,
             paddingBottom: '0.28em',
-            marginBottom: 12,
+            marginBottom: 8,
             background: 'linear-gradient(135deg, #c8a84a 0%, #e8c870 45%, #f0d890 100%)',
             WebkitBackgroundClip: 'text',
             WebkitTextFillColor: 'transparent',
@@ -390,7 +399,7 @@ export function Hero() {
           transition={{ duration: 0.7, delay: 0.5 }}
           style={{
             width: 52, height: 1,
-            marginBottom: 18,
+            marginBottom: 14,
             flexShrink: 0,
             background: 'linear-gradient(to right, transparent, #c8a84a, transparent)',
           }}
@@ -410,10 +419,10 @@ export function Hero() {
             justifyContent: 'center',
             columnGap: 0,
             rowGap: 4,
-            marginBottom: 16,
+            marginBottom: 12,
           }}
         >
-          {roles.map(({ label, color }, i) => (
+          {roles.map(({ label, color, weight }, i) => (
             // whiteSpace:nowrap keeps "ROLE ·" as an atomic wrap unit
             <span
               key={i}
@@ -426,12 +435,12 @@ export function Hero() {
               <span
                 style={{
                   fontSize: 'clamp(0.65rem, 1.85vw, 0.95rem)',
-                  fontWeight: 400,
+                  fontWeight: weight,
                   color,
                   letterSpacing: '0.10em',
                   textTransform: 'uppercase',
                   fontFamily: 'Inter, sans-serif',
-                  padding: '0 10px',
+                  padding: '0 8px',
                 }}
               >
                 {label}
@@ -454,24 +463,28 @@ export function Hero() {
           ))}
         </motion.div>
 
-        {/* ── 5. Tagline — contrast lifted to 0.68 (was 0.42) ─────────────── */}
+        {/* ── 5. Value proposition — concrete, non-italic, high contrast.
+               Replaces the abstract quoted tagline: states what he does,
+               the proof (8+ yrs incident-free), and the HSE→AI bridge.      */}
         <motion.p
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ duration: 0.9, delay: 0.75 }}
           style={{
             fontFamily: 'Inter, sans-serif',
-            fontStyle: 'italic',
-            fontWeight: 300,
-            fontSize: 'clamp(0.78rem, 1.9vw, 0.92rem)',
-            lineHeight: 1.72,
-            color: 'rgba(210,225,255,0.68)',
-            maxWidth: '34ch',
+            fontWeight: 400,
+            fontSize: 'clamp(0.85rem, 2.1vw, 1rem)',
+            lineHeight: 1.68,
+            color: 'rgba(222,233,255,0.87)',
+            maxWidth: '46ch',
             margin: '0 auto',
-            marginBottom: 'clamp(20px, 3.5vh, 36px)',
+            marginBottom: 'clamp(18px, 3vh, 30px)',
+            textShadow: '0 1px 18px rgba(2,10,24,0.85)',
           }}
         >
-          "8+ years of incident-free mining safety — now orchestrating enterprise AI workflows"
+          I build safer operations and smarter decision systems — combining
+          8+ years of incident-free mining HSE leadership with enterprise AI
+          orchestration.
         </motion.p>
 
         {/* ── 6. CTAs ───────────────────────────────────────────────────────── */}
@@ -484,12 +497,13 @@ export function Hero() {
             flexWrap: 'wrap',
             gap: 12,
             justifyContent: 'center',
-            marginBottom: 'clamp(24px, 4.5vh, 44px)',
+            marginBottom: 'clamp(20px, 4vh, 38px)',
           }}
         >
-          {/* Primary */}
+          {/* Primary — View Experience first: visitors need proof before
+              they are ready to contact. */}
           <button
-            onClick={() => scrollTo('contact')}
+            onClick={() => scrollTo('experience')}
             className="group relative rounded-lg font-bold uppercase overflow-hidden"
             style={{
               padding: '13px 32px',
@@ -507,7 +521,7 @@ export function Hero() {
             onBlur={e  => (e.currentTarget.style.boxShadow = '0 4px 28px rgba(200,168,74,0.32)')}
           >
             <span className="relative z-10 flex items-center justify-center gap-2">
-              Contact Me
+              View Experience
               <span className="group-hover:translate-x-1 transition-transform inline-block">→</span>
             </span>
             <div
@@ -517,9 +531,9 @@ export function Hero() {
             />
           </button>
 
-          {/* Secondary — NO spinner, idle state only */}
+          {/* Secondary — Contact Me */}
           <button
-            onClick={() => scrollTo('experience')}
+            onClick={() => scrollTo('contact')}
             className="rounded-lg font-semibold uppercase transition-colors duration-300"
             style={{
               padding: '13px 32px',
@@ -548,7 +562,7 @@ export function Hero() {
             onFocus={e => (e.currentTarget.style.outline = '2px solid rgba(200,168,74,0.55)')}
             onBlur={e  => (e.currentTarget.style.outline = 'none')}
           >
-            View Experience
+            Contact Me
           </button>
         </motion.div>
 
@@ -565,7 +579,7 @@ export function Hero() {
             display: 'grid',
             gridTemplateColumns: 'repeat(3, 1fr)',
             width: '100%',
-            maxWidth: 340,
+            maxWidth: 380,
           }}
         >
           {stats.map((s, i) => (
@@ -584,7 +598,7 @@ export function Hero() {
               <div
                 className="font-heading font-bold"
                 style={{
-                  fontSize: 'clamp(18px, 4.8vw, 26px)',
+                  fontSize: 'clamp(20px, 5.2vw, 28px)',
                   lineHeight: 1.1,
                   color: s.blue ? '#7ab8ff' : '#c8a84a',
                   textShadow: s.blue
@@ -596,11 +610,11 @@ export function Hero() {
               </div>
               <div
                 style={{
-                  marginTop: 5,
-                  fontSize: 'clamp(7px, 1.6vw, 9px)',
-                  letterSpacing: '0.08em',
+                  marginTop: 4,
+                  fontSize: 'clamp(8.5px, 2vw, 10px)',
+                  letterSpacing: '0.1em',
                   textTransform: 'uppercase',
-                  color: 'rgba(180,200,225,0.58)',
+                  color: 'rgba(190,208,232,0.75)',
                   fontFamily: 'Inter, sans-serif',
                   lineHeight: 1.35,
                   wordBreak: 'break-word',

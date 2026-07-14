@@ -255,13 +255,13 @@
 .hero-content {
   min-height: 100vh;
   min-height: 100svh;
-  padding-top: clamp(88px, 14vh, 136px);
-  padding-bottom: clamp(52px, 9vh, 96px);
+  padding-top: clamp(84px, 12vh, 124px);
+  padding-bottom: clamp(44px, 7vh, 84px);
   padding-left: clamp(16px, 5vw, 48px);
   padding-right: clamp(16px, 5vw, 48px);
   /* On devices with a notch/home bar, add extra inset */
-  padding-top: max(clamp(88px, 14vh, 136px), calc(env(safe-area-inset-top, 0px) + 72px));
-  padding-bottom: max(clamp(52px, 9vh, 96px), calc(env(safe-area-inset-bottom, 0px) + 40px));
+  padding-top: max(clamp(84px, 12vh, 124px), calc(env(safe-area-inset-top, 0px) + 72px));
+  padding-bottom: max(clamp(44px, 7vh, 84px), calc(env(safe-area-inset-bottom, 0px) + 36px));
 }
 
 /* On very short viewports (landscape phones) allow content to scroll rather
