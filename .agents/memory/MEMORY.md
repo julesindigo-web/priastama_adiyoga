@@ -1,0 +1,1 @@
+- [GitHub push via REST API](github-push-approach.md) — gitPush callback fails BRANCH_ALREADY_EXISTS; use scripts/github-push.mjs with connectors-sdk instead

@@ -29,6 +29,12 @@ const contacts = [
     color: '#c8a84a',
   },
   {
+    icon: Phone,
+    label: '+62 822-1359-5760',
+    href: 'tel:+6282213595760',
+    color: '#c8a84a',
+  },
+  {
     icon: MapPin,
     label: 'Samarinda, Kalimantan Timur',
     href: null,
