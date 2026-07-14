@@ -1,0 +1,24 @@
+# Vercel only builds artifacts/portfolio — exclude everything else
+# to keep upload size small and build fast.
+
+# Other artifacts (not part of this deployment)
+artifacts/api-server
+artifacts/mockup-sandbox
+
+# Replit-specific tooling
+.local
+.agents
+.replit
+replit.nix
+.upm
+
+# Dev assets (large files not served by the portfolio)
+attached_assets
+
+# Build caches
+node_modules
+**/dist
+**/.turbo
+
+# Logs
+*.log
