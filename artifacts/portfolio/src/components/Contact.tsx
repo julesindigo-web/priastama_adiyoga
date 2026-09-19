@@ -88,8 +88,9 @@ export function Contact() {
             className="mt-6 text-base max-w-lg mx-auto font-light"
             style={{ color: 'rgba(216,228,252,0.66)', fontFamily: 'Inter, sans-serif', lineHeight: 1.7 }}
           >
-            Butuh sistem SMKP yang lolos audit, program Zero Accident, atau pembinaan K3L
-            kontraktor di site high-risk? Saya bawa 8+ tahun bukti lapangan.
+            Bagi organisasi yang menempatkan keselamatan sebagai prioritas — mari
+            membangun sistem K3L yang lolos audit dan budaya Zero Accident yang
+            bertahan, didukung 8+ tahun pengalaman lapangan.
           </p>
         </motion.div>
 
