@@ -1,49 +1,50 @@
 import { motion } from 'framer-motion';
+import { Trophy, ShieldCheck, Building2, HeartHandshake } from 'lucide-react';
 
 const achievements = [
   {
-    emoji: '🏆',
-    title: 'Best Committee Chair',
-    subtitle: 'Ketua Panitia Terbaik · K3N 2023',
+    Icon: Trophy,
+    title: 'Ketua Panitia Terbaik',
+    subtitle: 'Bulan K3 Nasional 2023',
     color: '#c8a84a',
     gradient: 'linear-gradient(135deg, rgba(200,168,74,0.14) 0%, rgba(200,168,74,0.03) 100%)',
     border: 'rgba(200,168,74,0.28)',
     photo: '/photos/safety-event.jpg',
     description:
-      "Awarded by PT. Bayan Resources Tabang for outstanding leadership of National Workplace Safety Month at one of Indonesia's largest coal mining groups.",
+      'Dipercaya memimpin Bulan K3 Nasional di salah satu grup tambang batu bara terbesar Indonesia — mengorkestrasi kampanye Zero Accident lintas site PT. Bayan Resources Tabang.',
   },
   {
-    emoji: '🛡',
+    Icon: ShieldCheck,
     title: 'Zero Accident Record',
-    subtitle: '8+ Years · No LTI',
+    subtitle: '8+ Tahun · Tanpa LTI',
     color: '#2a7fff',
     gradient: 'linear-gradient(135deg, rgba(42,127,255,0.12) 0%, rgba(42,127,255,0.03) 100%)',
     border: 'rgba(42,127,255,0.25)',
     photo: '/photos/mining-panorama.jpg',
     description:
-      'Maintained incident-free operations across multiple active mine sites throughout an entire career in high-risk coal mining environments.',
+      'Mempertahankan operasi tanpa insiden di seluruh site tambang aktif sepanjang karier di lingkungan high-risk — HIRADC disiplin, audit SMKP rutin, dan BBS yang hidup.',
   },
   {
-    emoji: '🏗',
-    title: '3× Systems Built from Zero',
-    subtitle: 'OHS Architecture',
+    Icon: Building2,
+    title: '3× Sistem K3L dari Nol',
+    subtitle: 'Arsitektur SMKP',
     color: '#a89fd4',
     gradient: 'linear-gradient(135deg, rgba(168,159,212,0.1) 0%, rgba(168,159,212,0.02) 100%)',
     border: 'rgba(168,159,212,0.22)',
     photo: '/photos/mining-inspection.jpg',
     description:
-      'Designed, deployed, and sustained complete OHS Management Systems from inception at three different companies — each achieving zero major non-conformances.',
+      'Merancang, menerapkan, dan mempertahankan Sistem Manajemen K3L lengkap dari nol di tiga perusahaan — masing-masing lolos audit eksternal tanpa temuan mayor.',
   },
   {
-    emoji: '⚡',
-    title: 'Cross-Domain Integration',
-    subtitle: 'HSE · Legal · AI',
+    Icon: HeartHandshake,
+    title: 'Integrasi K3L · Hukum · Operasi',
+    subtitle: 'HSE · Legal · Site',
     color: '#3a9e8a',
     gradient: 'linear-gradient(135deg, rgba(58,158,138,0.1) 0%, rgba(58,158,138,0.02) 100%)',
     border: 'rgba(58,158,138,0.22)',
     photo: null,
     description:
-      'Pioneering the intersection of heavy industry risk management, legal frameworks, and generative AI workflow orchestration without writing code.',
+      'Memadukan manajemen risiko tambang, kerangka hukum ketenagakerjaan, dan eksekusi lapangan — dari SOP dan CSMS kontraktor hingga emergency drill yang terdokumentasi.',
   },
 ];
 
@@ -64,10 +65,10 @@ export function Achievements() {
           className="mb-24 text-center"
         >
           <span className="text-xs tracking-[0.3em] uppercase font-semibold mb-4 block" style={{ color: '#c8a84a', fontFamily: 'Inter, sans-serif' }}>
-            — Recognition & Impact —
+            — Rekognisi & Dampak K3L —
           </span>
           <h2 className="font-heading font-bold tracking-tight" style={{ fontSize: 'clamp(2rem,5vw,3.5rem)', color: '#eef2ff' }}>
-            Milestones of Impact
+            Milestones Zero Accident
           </h2>
           <div className="mt-4 mx-auto" style={{ width: 80, height: 2, background: 'linear-gradient(90deg,#c8a84a,#2a7fff)' }} />
         </motion.div>
@@ -88,7 +89,11 @@ export function Achievements() {
                 <div className="absolute inset-0">
                   <img
                     src={item.photo}
-                    alt={item.title}
+                    alt={`${item.title} — dokumentasi kegiatan K3L`}
+                    loading="lazy"
+                    decoding="async"
+                    width={640}
+                    height={400}
                     className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
                     style={{ filter: 'grayscale(65%) brightness(0.10) saturate(0.8)' }}
                   />
@@ -119,10 +124,10 @@ export function Achievements() {
               {/* Content */}
               <div className="relative z-10 p-8">
                 <div
-                  className="w-14 h-14 rounded-2xl flex items-center justify-center text-3xl mb-6 group-hover:scale-110 transition-transform duration-300"
+                  className="w-14 h-14 rounded-2xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300"
                   style={{ background: `${item.color}18`, border: `1px solid ${item.color}32` }}
                 >
-                  {item.emoji}
+                  <item.Icon size={26} style={{ color: item.color }} aria-hidden="true" />
                 </div>
 
                 <h3 className="font-heading font-bold text-2xl mb-1" style={{ color: '#eef2ff' }}>{item.title}</h3>
@@ -132,7 +137,7 @@ export function Achievements() {
                 >
                   {item.subtitle}
                 </div>
-                <p className="text-sm leading-relaxed" style={{ color: 'rgba(210,225,255,0.62)', fontFamily: 'Inter, sans-serif' }}>
+                <p className="text-sm leading-relaxed" style={{ color: 'rgba(216,228,252,0.72)', fontFamily: 'Inter, sans-serif' }}>
                   {item.description}
                 </p>
               </div>

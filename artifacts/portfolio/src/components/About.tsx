@@ -1,35 +1,36 @@
 import { motion } from 'framer-motion';
+import { HardHat, Scale, ShieldCheck, ClipboardCheck, Siren } from 'lucide-react';
 
-// Royal Night palette
+// Royal Night palette — HSE/K3L premium
 // Gold:  #c8a84a | #d4b558 | #e8c870
 // Blue:  #2a7fff | #7ab8ff
 // Navy bg: #020a18
 
 const stats = [
-  { value: '8+',    label: 'Years in HSE',        color: '#c8a84a' },
-  { value: 'S.H.',  label: 'Sarjana Hukum',        color: '#7ab8ff' },
-  { value: 'PERADI', label: 'Advocate Certified',  color: '#c8a84a' },
-  { value: 'Zero',  label: 'Lost-Time Incidents',   color: '#7ab8ff' },
+  { value: '8+',    label: 'Tahun di HSE & K3L',     color: '#c8a84a' },
+  { value: 'SMKP',  label: 'Auditor Tersertifikasi', color: '#7ab8ff' },
+  { value: '30+',   label: 'Sertifikasi K3',         color: '#c8a84a' },
+  { value: 'Zero',  label: 'Lost-Time Incidents',    color: '#7ab8ff' },
 ];
 
 const identities = [
   {
-    icon: '⛏',
+    Icon: HardHat,
     title: 'Mining HSE Expert',
     color: '#c8a84a',
-    desc: '8+ years in coal mining operations with Bayan Resources Group across Kalimantan Timur.',
+    desc: '8+ tahun operasi batu bara bersama Bayan Resources Group di Kalimantan Timur — safety leadership di high-risk environment.',
   },
   {
-    icon: '⚖',
-    title: 'Legal Professional',
+    Icon: Scale,
+    title: 'SMKP & Kepatuhan K3L',
     color: '#a89fd4',
-    desc: 'Sarjana Hukum (S.H.) graduate, certified PERADI Advocate — legal precision applied to safety compliance.',
+    desc: 'Sarjana Hukum (S.H.) + Advokat PERADI — presisi hukum untuk arsitektur kepatuhan SMKP, regulasi ESDM, dan audit K3L.',
   },
   {
-    icon: '🤖',
-    title: 'AI Orchestrator',
+    Icon: ShieldCheck,
+    title: 'K3L Culture Builder',
     color: '#7ab8ff',
-    desc: 'Directing enterprise-scale LLM workflows and AI systems without writing a single line of code.',
+    desc: 'Membangun 3× Safety Management System dari nol, HIRADC, CSMS, dan budaya Zero Accident yang bertahan lintas siklus operasi.',
   },
 ];
 
@@ -91,7 +92,11 @@ export function About() {
             >
               <img
                 src="/photos/profile.jpg"
-                alt="Priastama Adiyoga"
+                alt="Priastama Adiyoga — Mining HSE Manager di site Kalimantan Timur"
+                loading="lazy"
+                decoding="async"
+                width={600}
+                height={800}
                 className="w-full h-full object-cover object-center"
                 style={{ filter: 'contrast(1.04) brightness(1.02)' }}
               />
@@ -114,7 +119,7 @@ export function About() {
                 >
                   <div className="font-heading font-bold text-sm" style={{ color: '#eef2ff' }}>Priastama Adiyoga</div>
                   <div className="text-xs mt-0.5" style={{ color: '#c8a84a', fontFamily: 'Inter, sans-serif' }}>
-                    HSE Manager · AI Orchestrator
+                    HSE Manager · SMKP Auditor · K3L
                   </div>
                 </div>
               </div>
@@ -127,7 +132,11 @@ export function About() {
             >
               <img
                 src="/photos/kalimantan.jpg"
-                alt="Kalimantan Timur"
+                alt="Operasi tambang Kalimantan Timur — area kerja HSE dan K3L"
+                loading="lazy"
+                decoding="async"
+                width={600}
+                height={450}
                 className="w-full h-full object-cover"
                 style={{ filter: 'grayscale(20%) brightness(0.72) saturate(1.1)' }}
               />
@@ -135,7 +144,7 @@ export function About() {
                 style={{ background: 'linear-gradient(to top, rgba(2,10,24,0.78) 0%, transparent 60%)' }} />
               <div className="absolute bottom-4 left-4">
                 <div className="text-xs font-semibold tracking-widest uppercase" style={{ color: '#7ab8ff', fontFamily: 'Inter, sans-serif' }}>
-                  📍 Kalimantan Timur
+                  Kalimantan Timur — Site K3L
                 </div>
               </div>
               <div className="absolute top-0 left-0 right-0 h-px"
@@ -176,9 +185,14 @@ export function About() {
                     style={{ background: `linear-gradient(90deg, transparent, ${id.color}, transparent)` }}
                   />
                   <div className="relative z-10">
-                    <div className="text-3xl mb-3">{id.icon}</div>
+                    <div
+                      className="w-10 h-10 rounded-xl flex items-center justify-center mb-3"
+                      style={{ background: `${id.color}14`, border: `1px solid ${id.color}30` }}
+                    >
+                      <id.Icon size={18} style={{ color: id.color }} aria-hidden="true" />
+                    </div>
                     <h3 className="font-heading font-bold text-sm mb-2" style={{ color: id.color }}>{id.title}</h3>
-                    <p className="text-xs leading-relaxed" style={{ color: 'rgba(210,225,255,0.48)', fontFamily: 'Inter, sans-serif' }}>
+                    <p className="text-xs leading-relaxed" style={{ color: 'rgba(216,228,252,0.72)', fontFamily: 'Inter, sans-serif' }}>
                       {id.desc}
                     </p>
                   </div>
@@ -186,26 +200,28 @@ export function About() {
               ))}
             </div>
 
-            {/* Story — scannable pillars */}
+            {/* Story — scannable HSE/K3L pillars */}
             <div className="space-y-3">
               {[
                 {
-                  icon: '⛏',
+                  Icon: HardHat,
                   color: '#c8a84a',
-                  label: 'Field Expertise',
-                  text: '8+ years building and sustaining HSE systems in coal mining operations across Kalimantan — where a single lapse can be catastrophic and zero LTI is the only acceptable outcome.',
+                  label: 'Keahlian Lapangan K3L',
+                  text: '8+ tahun membangun dan mempertahankan sistem HSE di operasi batu bara Kalimantan — di mana satu kelalaian bisa fatal dan Zero LTI adalah satu-satunya target.',
                 },
                 {
-                  icon: '⚖',
+                  Icon: ClipboardCheck,
                   color: '#a89fd4',
-                  label: 'Legal Foundation',
-                  text: 'Sarjana Hukum (S.H.) graduate and certified PERADI Advocate — legal precision and regulatory mastery applied directly to safety compliance architecture.',
+                  label: 'SMKP & Kepatuhan Regulasi',
+                  text: 'Sarjana Hukum (S.H.) dan Advokat PERADI — merancang arsitektur kepatuhan SMKP, audit internal, dan dokumentasi K3L yang lolos audit eksternal tanpa temuan mayor.',
                 },
                 {
-                  icon: '🤖',
+                  Icon: Siren,
                   color: '#7ab8ff',
-                  label: 'AI Frontier',
-                  text: 'Directing enterprise-scale LLM workflows and AI systems without writing code — proving that rigorous systems-thinking transfers across any domain.',
+                  label: 'HIRADC · CSMS · Tanggap Darurat',
+                  text: 'Spesialis HIRADC, Contractor Safety Management System, investigasi insiden, dan emergency response plan untuk heavy equipment zone dan hauling batubara.',
+                },
+              ].map((item, i) => (
                 },
               ].map((item, i) => (
                 <motion.div
@@ -221,10 +237,10 @@ export function About() {
                   }}
                 >
                   <div
-                    className="shrink-0 w-9 h-9 rounded-lg flex items-center justify-center text-base mt-0.5"
+                    className="shrink-0 w-9 h-9 rounded-lg flex items-center justify-center mt-0.5"
                     style={{ background: `${item.color}14`, border: `1px solid ${item.color}28` }}
                   >
-                    {item.icon}
+                    <item.Icon size={16} style={{ color: item.color }} aria-hidden="true" />
                   </div>
                   <div>
                     <div
@@ -235,7 +251,7 @@ export function About() {
                     </div>
                     <p
                       className="text-sm leading-relaxed"
-                      style={{ color: 'rgba(210,225,255,0.58)', fontFamily: 'Inter, sans-serif' }}
+                      style={{ color: 'rgba(216,228,252,0.74)', fontFamily: 'Inter, sans-serif' }}
                     >
                       {item.text}
                     </p>

@@ -1,49 +1,49 @@
 import { motion } from 'framer-motion';
+import { HardHat, ClipboardCheck, Siren, HeartHandshake } from 'lucide-react';
 
 const categories = [
   {
-    title: 'HSE & Safety',
-    icon: '⛏',
+    title: 'HSE & Operasi Keselamatan',
+    Icon: HardHat,
     color: '#c8a84a',
     gradient: 'linear-gradient(135deg, rgba(200,168,74,0.12) 0%, rgba(200,168,74,0.03) 100%)',
     border: 'rgba(200,168,74,0.22)',
     skills: [
-      'Risk Management', 'Incident Investigation', 'OHS Audit & Inspection',
-      'OHS Compliance', 'Safety Counseling', 'Emergency Response',
-      'Environmental Management', 'HIRADC', 'Behavior Based Safety', 'SMKP',
+      'Manajemen Risiko K3', 'Investigasi Insiden', 'HIRADC', 'Inspeksi & Audit K3',
+      'Behavior Based Safety', 'Safety Counseling', 'Perizinan Kerja Aman', 'SMKP',
     ],
   },
   {
-    title: 'Technology & AI',
-    icon: '🤖',
-    color: '#2a7fff',
-    gradient: 'linear-gradient(135deg, rgba(42,127,255,0.12) 0%, rgba(42,127,255,0.03) 100%)',
-    border: 'rgba(42,127,255,0.22)',
-    skills: [
-      'AI Project Orchestration', 'Prompt Engineering', 'LLM Workflow Automation',
-      'Enterprise AI Deployment', 'AI System Validation', 'AI Scale Coordination',
-    ],
-  },
-  {
-    title: 'Regulatory & Legal',
-    icon: '⚖',
+    title: 'K3L, SMKP & Kepatuhan Regulasi',
+    Icon: ClipboardCheck,
     color: '#a89fd4',
     gradient: 'linear-gradient(135deg, rgba(168,159,212,0.1) 0%, rgba(168,159,212,0.02) 100%)',
     border: 'rgba(168,159,212,0.18)',
     skills: [
-      'Mining Regulatory Compliance', 'Legal Drafting', 'CSMS',
-      'Safety Documentation', 'Advocate Professional (PERADI)',
+      'SMKP Pertambangan', 'Kepatuhan Regulasi ESDM', 'Legal Drafting K3L', 'CSMS',
+      'Dokumentasi & SOP K3L', 'Audit Internal SMKP', 'Advokat PERADI',
     ],
   },
   {
-    title: 'Leadership',
-    icon: '🧭',
+    title: 'Tanggap Darurat & Lingkungan',
+    Icon: Siren,
+    color: '#2a7fff',
+    gradient: 'linear-gradient(135deg, rgba(42,127,255,0.12) 0%, rgba(42,127,255,0.03) 100%)',
+    border: 'rgba(42,127,255,0.22)',
+    skills: [
+      'Emergency Response Plan', 'Manajemen Lingkungan', 'Pengelolaan Limbah Tambang',
+      'Pemantauan Kualitas Lingkungan', 'Simulasi Kedaruratan', 'First Aid & Rescue Support',
+    ],
+  },
+  {
+    title: 'Kepemimpinan Budaya K3L',
+    Icon: HeartHandshake,
     color: '#3a9e8a',
     gradient: 'linear-gradient(135deg, rgba(58,158,138,0.1) 0%, rgba(58,158,138,0.02) 100%)',
     border: 'rgba(58,158,138,0.18)',
     skills: [
-      'Team Leadership', 'Negotiation', 'Public Speaking',
-      'Process Improvement', 'Analytical Problem Solving',
+      'Safety Leadership', 'Pembinaan Pekerja & Kontraktor', 'Kampanye Bulan K3 Nasional',
+      'Continuous Improvement K3L', 'Analytical Problem Solving',
     ],
   },
 ];
@@ -63,11 +63,14 @@ export function Skills() {
           className="mb-24 text-center"
         >
           <span className="text-xs tracking-[0.3em] uppercase font-semibold mb-4 block" style={{ color: '#c8a84a', fontFamily: 'Inter, sans-serif' }}>
-            — Core Competencies —
+            — Kompetensi Inti K3L —
           </span>
           <h2 className="font-heading font-bold tracking-tight" style={{ fontSize: 'clamp(2rem,5vw,3.5rem)', color: '#eef2ff' }}>
-            Competency Matrix
+            Matriks Kompetensi HSE
           </h2>
+          <p className="mt-4 text-sm max-w-xl mx-auto" style={{ color: 'rgba(216,228,252,0.62)', fontFamily: 'Inter, sans-serif' }}>
+            Fokus penuh pada safety, K3L, SMKP, dan budaya Zero Accident di operasi pertambangan.
+          </p>
           <div className="mt-4 mx-auto" style={{ width: 80, height: 2, background: 'linear-gradient(90deg,#c8a84a,#2a7fff)' }} />
         </motion.div>
 
@@ -90,16 +93,16 @@ export function Skills() {
 
               <div className="flex items-center gap-4 mb-7">
                 <div
-                  className="w-12 h-12 rounded-xl flex items-center justify-center text-2xl shrink-0"
+                  className="w-12 h-12 rounded-xl flex items-center justify-center shrink-0"
                   style={{ background: `${cat.color}18`, border: `1px solid ${cat.color}28` }}
                 >
-                  {cat.icon}
+                  <cat.Icon size={22} style={{ color: cat.color }} aria-hidden="true" />
                 </div>
                 <h3 className="font-heading font-bold text-xl" style={{ color: cat.color }}>
                   {cat.title}
                 </h3>
                 <div className="ml-auto text-xs font-mono" style={{ color: `${cat.color}70`, fontFamily: 'Inter, sans-serif' }}>
-                  {cat.skills.length} skills
+                  {cat.skills.length} kompetensi
                 </div>
               </div>
 
@@ -115,7 +118,7 @@ export function Skills() {
                     style={{
                       background: 'rgba(2,10,24,0.45)',
                       border: '1px solid rgba(210,225,255,0.08)',
-                      color: 'rgba(210,225,255,0.65)',
+                      color: 'rgba(216,228,252,0.78)',
                       fontFamily: 'Inter, sans-serif',
                     }}
                     onMouseEnter={e => {
@@ -126,7 +129,7 @@ export function Skills() {
                     onMouseLeave={e => {
                       (e.currentTarget as HTMLElement).style.background = 'rgba(2,10,24,0.45)';
                       (e.currentTarget as HTMLElement).style.borderColor = 'rgba(210,225,255,0.08)';
-                      (e.currentTarget as HTMLElement).style.color = 'rgba(210,225,255,0.65)';
+                      (e.currentTarget as HTMLElement).style.color = 'rgba(216,228,252,0.78)';
                     }}
                   >
                     {skill}

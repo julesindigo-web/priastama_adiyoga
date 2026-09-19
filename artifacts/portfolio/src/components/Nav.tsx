@@ -18,8 +18,16 @@ export function Nav() {
 
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 60);
-    window.addEventListener('scroll', onScroll);
+    window.addEventListener('scroll', onScroll, { passive: true });
     return () => window.removeEventListener('scroll', onScroll);
+  }, []);
+
+  useEffect(() => {
+    const onKey = (e: KeyboardEvent) => {
+      if (e.key === 'Escape') setMobileOpen(false);
+    };
+    window.addEventListener('keydown', onKey);
+    return () => window.removeEventListener('keydown', onKey);
   }, []);
 
   useEffect(() => {
@@ -45,6 +53,7 @@ export function Nav() {
         initial={{ y: -80, opacity: 0 }}
         animate={{ y: 0, opacity: 1 }}
         transition={{ duration: 0.8, ease: 'easeOut' }}
+        aria-label="Navigasi utama portfolio HSE"
         className="fixed top-0 left-0 right-0 z-50 transition-all duration-500"
         style={{
           background:    scrolled ? 'rgba(2,10,24,0.88)' : 'transparent',
@@ -57,6 +66,7 @@ export function Nav() {
           {/* Logo */}
           <button
             onClick={() => scrollTo('hero')}
+            aria-label="Kembali ke beranda portfolio HSE Priastama Adiyoga"
             className="flex items-center gap-2.5 font-heading font-bold text-lg tracking-widest hover:opacity-80 transition-opacity"
           >
             <span
@@ -115,6 +125,9 @@ export function Nav() {
           {/* Mobile burger */}
           <button
             className="md:hidden p-2 rounded-lg transition-colors"
+            aria-label={mobileOpen ? 'Tutup menu navigasi' : 'Buka menu navigasi'}
+            aria-expanded={mobileOpen}
+            aria-controls="mobile-hse-menu"
             style={{ background: 'rgba(200,168,74,0.07)', border: '1px solid rgba(200,168,74,0.15)' }}
             onClick={() => setMobileOpen(v => !v)}
           >
@@ -133,6 +146,10 @@ export function Nav() {
             animate={{ opacity: 1, x: 0 }}
             exit={{ opacity: 0, x: '100%' }}
             transition={{ type: 'spring', stiffness: 300, damping: 30 }}
+            id="mobile-hse-menu"
+            role="dialog"
+            aria-modal="true"
+            aria-label="Menu navigasi HSE"
             className="fixed top-0 right-0 bottom-0 z-40 w-72 flex flex-col pt-24 px-8 gap-2"
             style={{
               background:    'rgba(2,10,24,0.97)',

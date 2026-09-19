@@ -5,14 +5,14 @@ const experiences = [
     company: 'PT. Sungai Berlian Mahakam',
     role: 'HSE Coordinator / SMKP Auditor & Internal Auditor',
     period: 'Jan 2025 – Nov 2025',
-    tag: 'Latest',
+    tag: 'Terkini',
     tagColor: '#7ab8ff',
     color: '#7ab8ff',
     description: [
-      'Developed and upgraded OHS management systems across all IUP areas',
-      'Delivered data-driven reporting to MSED Director',
-      'Coordinated HSE personnel planning across all IUP operations',
-      'Ensured enterprise-wide regulatory compliance with Ministry of Mining standards',
+      'Mengembangkan dan meningkatkan sistem manajemen K3L di seluruh wilayah IUP',
+      'Menyusun pelaporan K3L berbasis data untuk Direktur MSED',
+      'Mengkoordinasikan perencanaan personel HSE lintas seluruh operasi IUP',
+      'Memastikan kepatuhan regulasi pertambangan di seluruh perusahaan',
     ],
   },
   {
@@ -23,43 +23,43 @@ const experiences = [
     tagColor: '#c8a84a',
     color: '#c8a84a',
     description: [
-      'Built complete Safety Management System from inception for Bayan Group Tabang–Senyiur coal hauling project',
-      'Maintained incident-free operations in high-risk subcontractor environment',
+      'Membangun Safety Management System lengkap dari nol untuk proyek hauling batubara Tabang–Senyiur Bayan Group',
+      'Mempertahankan operasi tanpa insiden di lingkungan subkontraktor high-risk',
     ],
   },
   {
     company: 'PT. Aragon Tambang Pratama',
     role: 'Senior HSE Staff',
-    period: 'Oct 2023 – Jul 2024',
+    period: 'Okt 2023 – Jul 2024',
     tag: 'Zero LTI',
     tagColor: '#4da6ff',
     color: '#c8a84a',
     description: [
-      'Designed and deployed complete OHS Management System from zero',
-      'Achieved Zero Accident and No LTI for entire project duration',
-      'Zero major non-conformances in external audits',
+      'Merancang dan menerapkan Sistem Manajemen K3L lengkap dari nol',
+      'Mencapai Zero Accident dan tanpa LTI selama seluruh durasi proyek',
+      'Nol temuan mayor pada audit eksternal',
     ],
   },
   {
     company: 'PT. Bara Tabang – Bayan Resources Group',
     role: 'Safety Foreman, Systems & Compliance',
     period: 'Jul 2017 – Jul 2023',
-    tag: '6 Years · Award',
+    tag: '6 Tahun · Penghargaan',
     tagColor: '#c8a84a',
     color: '#c8a84a',
     description: [
-      'Managed end-to-end safety documentation for one of Indonesia\'s largest coal mining sites',
-      'Sustained 100% SOP currency site-wide across 6 years',
-      'Built and sustained Zero Accident safety culture across multiple operational cycles',
-      '🏆 Honored as Ketua Panitia Terbaik — Bulan K3 Nasional 2023 by PT. Bayan Resources Tabang',
+      'Mengelola dokumentasi keselamatan end-to-end di salah satu site tambang batu bara terbesar Indonesia',
+      'Mempertahankan 100% SOP aktual di seluruh site selama 6 tahun',
+      'Membangun dan mempertahankan budaya Zero Accident lintas siklus operasi',
+      'Penghargaan Ketua Panitia Terbaik — Bulan K3 Nasional 2023 oleh PT. Bayan Resources Tabang',
     ],
   },
 ];
 
 const fieldPhotos = [
-  { src: '/photos/mining-inspection.jpg', caption: 'Field Inspection',   sub: 'Mine site HSE audit' },
-  { src: '/photos/mining-panorama.jpg',   caption: 'Site Oversight',      sub: 'Operational surveillance' },
-  { src: '/photos/mining-work.jpg',       caption: 'Active Operations',   sub: 'Heavy equipment zone' },
+  { src: '/photos/mining-inspection.jpg', caption: 'Inspeksi K3L Lapangan',   sub: 'Audit HSE & SMKP di site tambang' },
+  { src: '/photos/mining-panorama.jpg',   caption: 'Pengawasan Site',      sub: 'Surveillance operasi & bahaya' },
+  { src: '/photos/mining-work.jpg',       caption: 'Operasi Aktif',   sub: 'Zona heavy equipment & hauling' },
 ];
 
 export function Experience() {
@@ -84,10 +84,10 @@ export function Experience() {
           className="mb-24 text-center"
         >
           <span className="text-xs tracking-[0.3em] uppercase font-semibold mb-4 block" style={{ color: '#c8a84a', fontFamily: 'Inter, sans-serif' }}>
-            — Career Timeline —
+            — Linimasa Karier K3L —
           </span>
           <h2 className="font-heading font-bold tracking-tight" style={{ fontSize: 'clamp(2rem,5vw,3.5rem)', color: '#eef2ff' }}>
-            Professional Trajectory
+            Jejak Profesional HSE
           </h2>
           <div className="mt-4 mx-auto" style={{ width: 80, height: 2, background: 'linear-gradient(90deg,#c8a84a,#2a7fff)' }} />
         </motion.div>
@@ -108,7 +108,11 @@ export function Experience() {
             >
               <img
                 src={photo.src}
-                alt={photo.caption}
+                alt={`${photo.caption} — dokumentasi HSE di site tambang`}
+                loading="lazy"
+                decoding="async"
+                width={640}
+                height={400}
                 className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
                 style={{ filter: 'grayscale(30%) brightness(0.65) saturate(1.1)' }}
               />
@@ -208,7 +212,7 @@ export function Experience() {
                         <li
                           key={j}
                           className="flex items-start gap-3 text-sm leading-relaxed"
-                          style={{ color: 'rgba(210,225,255,0.58)', fontFamily: 'Inter, sans-serif' }}
+                          style={{ color: 'rgba(216,228,252,0.74)', fontFamily: 'Inter, sans-serif' }}
                         >
                           <span className="mt-1.5 shrink-0 w-1 h-1 rounded-full" style={{ background: exp.color }} />
                           {item}

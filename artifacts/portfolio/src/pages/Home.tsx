@@ -11,9 +11,12 @@ import ThemeProvider from '@/components/ThemeProvider';
 export default function Home() {
   return (
     <ThemeProvider>
+      <a href="#hero" className="skip-link">
+        Lewati ke konten utama
+      </a>
       <div className="min-h-screen bg-background text-foreground font-sans selection:bg-primary/30 selection:text-white">
         <Nav />
-        <main>
+        <main id="main-content">
           <Hero />
           <About />
           <Experience />

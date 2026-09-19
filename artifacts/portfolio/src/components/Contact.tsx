@@ -1,44 +1,50 @@
 import { motion } from 'framer-motion';
-import { Mail, Linkedin, MapPin, Phone, ExternalLink, ArrowUpRight } from 'lucide-react';
+import { Mail, Linkedin, MapPin, Phone, MessageCircle, ExternalLink, ArrowUpRight } from 'lucide-react';
 
 const opportunities = [
-  { label: 'HSE Management & Directorship',  color: '#c8a84a' },
-  { label: 'Enterprise AI Integration',       color: '#2a7fff' },
-  { label: 'OHS Systems Architecture',        color: '#c8a84a' },
-  { label: 'Mining Safety Consulting',        color: '#2a7fff' },
+  { label: 'HSE Manager & Leadership K3L',  color: '#c8a84a' },
+  { label: 'SMKP Audit & Sistem K3L',       color: '#2a7fff' },
+  { label: 'Konsultan Keselamatan Tambang', color: '#c8a84a' },
+  { label: 'CSMS & Pembinaan Kontraktor',   color: '#2a7fff' },
 ];
 
 const contacts = [
   {
-    icon: Mail,
+    Icon: Mail,
     label: 'adiyoga.hse@gmail.com',
     href: 'mailto:adiyoga.hse@gmail.com',
+    aria: 'Kirim email kebutuhan HSE dan K3L',
     color: '#c8a84a',
   },
   {
-    icon: Linkedin,
-    label: 'Priastama Adiyoga',
+    Icon: Linkedin,
+    label: 'Priastama Adiyoga — HSE & K3L',
     href: 'https://linkedin.com/in/priastama-adiyoga',
+    aria: 'Buka profil LinkedIn HSE Priastama Adiyoga',
     color: '#2a7fff',
     external: true,
   },
   {
-    icon: Phone,
+    Icon: Phone,
     label: '+62 821-5482-5454',
     href: 'tel:+6282154825454',
+    aria: 'Telepon HSE +62 821-5482-5454',
     color: '#c8a84a',
   },
   {
-    icon: Phone,
-    label: '+62 822-1359-5760',
-    href: 'tel:+6282213595760',
-    color: '#c8a84a',
+    Icon: MessageCircle,
+    label: '+62 822-1359-5760 (WhatsApp)',
+    href: 'https://wa.me/6282213595760',
+    aria: 'Hubungi WhatsApp HSE +62 822-1359-5760',
+    color: '#3a9e8a',
+    external: true,
   },
   {
-    icon: MapPin,
-    label: 'Samarinda, Kalimantan Timur',
+    Icon: MapPin,
+    label: 'Samarinda, Kalimantan Timur — Siap onsite site',
     href: null,
-    color: 'rgba(210,225,255,0.45)',
+    aria: null,
+    color: 'rgba(216,228,252,0.6)',
   },
 ];
 
@@ -67,23 +73,23 @@ export function Contact() {
           className="mb-24 text-center"
         >
           <span className="text-xs tracking-[0.3em] uppercase font-semibold mb-4 block" style={{ color: '#c8a84a', fontFamily: 'Inter, sans-serif' }}>
-            — Get In Touch —
+            — Hubungi untuk K3L —
           </span>
           <h2 className="font-heading font-bold tracking-tight" style={{ fontSize: 'clamp(2.5rem,6vw,5rem)', lineHeight: 1.2, color: '#eef2ff' }}>
-            Let's build{' '}
+            Mari bangun{' '}
             <span
               className="text-transparent bg-clip-text"
               style={{ backgroundImage: 'linear-gradient(135deg, #c8a84a, #e8c870, #7ab8ff)', display: 'inline-block', paddingBottom: '0.06em' }}
             >
-              systems.
+              budaya selamat.
             </span>
           </h2>
           <p
             className="mt-6 text-base max-w-lg mx-auto font-light"
-            style={{ color: 'rgba(210,225,255,0.48)', fontFamily: 'Inter, sans-serif', lineHeight: 1.7 }}
+            style={{ color: 'rgba(216,228,252,0.66)', fontFamily: 'Inter, sans-serif', lineHeight: 1.7 }}
           >
-            Whether you need robust HSE frameworks in high-risk environments or scalable AI workflows,
-            I bring precision and vision to every challenge.
+            Butuh sistem SMKP yang lolos audit, program Zero Accident, atau pembinaan K3L
+            kontraktor di site high-risk? Saya bawa 8+ tahun bukti lapangan.
           </p>
         </motion.div>
 
@@ -97,13 +103,12 @@ export function Contact() {
           >
             <h3
               className="text-xs tracking-[0.25em] uppercase font-semibold mb-8"
-              style={{ color: 'rgba(210,225,255,0.28)', fontFamily: 'Inter, sans-serif' }}
+              style={{ color: 'rgba(216,228,252,0.46)', fontFamily: 'Inter, sans-serif' }}
             >
-              Direct Contact
+              Kontak Langsung HSE
             </h3>
             <div className="space-y-4">
               {contacts.map((c, i) => {
-                const Icon = c.icon;
                 const inner = (
                   <div
                     key={i}
@@ -128,9 +133,9 @@ export function Contact() {
                       className="w-12 h-12 rounded-xl flex items-center justify-center shrink-0 transition-all duration-300 group-hover:scale-105"
                       style={{ background: `${c.color}14`, border: `1px solid ${c.color}28` }}
                     >
-                      <Icon size={18} style={{ color: c.color }} />
+                      <c.Icon size={18} style={{ color: c.color }} aria-hidden="true" />
                     </div>
-                    <span className="font-medium text-sm" style={{ color: 'rgba(238,242,255,0.78)', fontFamily: 'Inter, sans-serif' }}>
+                    <span className="font-medium text-sm" style={{ color: 'rgba(238,242,255,0.86)', fontFamily: 'Inter, sans-serif' }}>
                       {c.label}
                     </span>
                     {c.external && (
@@ -140,10 +145,12 @@ export function Contact() {
                 );
 
                 return c.href ? (
-                  <a key={i} href={c.href} target={c.external ? '_blank' : undefined} rel={c.external ? 'noreferrer' : undefined}>
+                  <a key={i} href={c.href} aria-label={c.aria || c.label} target={c.external ? '_blank' : undefined} rel={c.external ? 'noreferrer' : undefined}>
                     {inner}
                   </a>
-                ) : inner;
+                ) : (
+                  <div key={i} aria-label={c.label}>{inner}</div>
+                );
               })}
             </div>
           </motion.div>
@@ -168,9 +175,9 @@ export function Contact() {
 
             <h3
               className="text-xs tracking-[0.25em] uppercase font-semibold mb-8"
-              style={{ color: 'rgba(210,225,255,0.28)', fontFamily: 'Inter, sans-serif' }}
+              style={{ color: 'rgba(216,228,252,0.46)', fontFamily: 'Inter, sans-serif' }}
             >
-              Open to Opportunities
+              Terbuka untuk Penugasan K3L
             </h3>
 
             <div className="space-y-3 mb-10">
@@ -188,7 +195,7 @@ export function Contact() {
                     className="w-2 h-2 rounded-full shrink-0"
                     style={{ background: opp.color, boxShadow: `0 0 8px ${opp.color}` }}
                   />
-                  <span className="font-medium text-sm" style={{ color: 'rgba(238,242,255,0.78)', fontFamily: 'Inter, sans-serif' }}>
+                  <span className="font-medium text-sm" style={{ color: 'rgba(238,242,255,0.84)', fontFamily: 'Inter, sans-serif' }}>
                     {opp.label}
                   </span>
                   <ExternalLink size={12} className="ml-auto opacity-18 group-hover:opacity-55 transition-opacity" style={{ color: opp.color }} />
@@ -198,7 +205,8 @@ export function Contact() {
 
             {/* CTA */}
             <a
-              href="mailto:adiyoga.hse@gmail.com"
+              href="mailto:adiyoga.hse@gmail.com?subject=Kebutuhan%20HSE%20%2F%20K3L%20—%20Diskusi%20Site"
+              aria-label="Kirim email kebutuhan HSE dan K3L"
               className="flex items-center justify-center gap-2 w-full py-4 rounded-xl font-bold text-sm tracking-widest uppercase transition-all duration-300 hover:scale-[1.02]"
               style={{
                 background: 'linear-gradient(135deg, #c8a84a, #e8c870)',
@@ -208,16 +216,16 @@ export function Contact() {
               }}
             >
               <Mail size={15} />
-              Send a Message
+              Diskusikan Kebutuhan K3L
             </a>
 
             {/* Footer */}
             <div className="mt-8 pt-6 text-center" style={{ borderTop: '1px solid rgba(200,168,74,0.08)' }}>
               <p
                 className="text-xs tracking-[0.15em] uppercase font-semibold"
-                style={{ color: 'rgba(210,225,255,0.18)', fontFamily: 'Inter, sans-serif' }}
+                style={{ color: 'rgba(216,228,252,0.34)', fontFamily: 'Inter, sans-serif' }}
               >
-                © {new Date().getFullYear()} Priastama Adiyoga
+                © {new Date().getFullYear()} Priastama Adiyoga — HSE · K3L · Mining Safety
               </p>
             </div>
           </motion.div>

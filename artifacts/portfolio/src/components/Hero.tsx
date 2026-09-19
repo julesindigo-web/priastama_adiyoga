@@ -249,15 +249,15 @@ export function Hero() {
     document.getElementById(id)?.scrollIntoView({ behavior: 'smooth' });
 
   const stats = [
-    { value: '8+',  label: 'Years in HSE',        blue: false },
+    { value: '8+',  label: 'Tahun di HSE & K3L',   blue: false },
     { value: '0',   label: 'Lost-Time Incidents', blue: true  },
-    { value: '30+', label: 'Certifications',      blue: false },
+    { value: '30+', label: 'Sertifikasi K3',      blue: false },
   ];
 
   const roles: { label: string; color: string; weight: number }[] = [
-    { label: 'Mining HSE Manager', color: '#c8a84a',                weight: 500 },
-    { label: 'OHS Specialist',     color: 'rgba(210,225,255,0.66)', weight: 400 },
-    { label: 'AI Orchestrator',    color: '#7ab8ff',                weight: 400 },
+    { label: 'Mining HSE Manager',          color: '#c8a84a',                weight: 500 },
+    { label: 'SMKP Auditor · OHS Specialist', color: 'rgba(210,225,255,0.66)', weight: 400 },
+    { label: 'K3L Systems Leader',          color: '#7ab8ff',                weight: 400 },
   ];
 
   return (
@@ -270,6 +270,8 @@ export function Hero() {
         src="/photos/royal-night-bg.png"
         alt=""
         aria-hidden="true"
+        fetchPriority="high"
+        decoding="async"
         className="absolute inset-0 w-full h-full object-cover object-center pointer-events-none select-none"
         style={{ filter: 'brightness(0.52) saturate(1.1)', zIndex: 0 }}
       />
@@ -343,55 +345,45 @@ export function Hero() {
               animation: 'pulse 2.2s ease-in-out infinite',
             }}
           />
-          Open to HSE Leadership & AI Collaborations
+          Open to HSE Leadership & K3L Collaborations
         </motion.div>
 
-        {/* ── 2. Name ───────────────────────────────────────────────────────── */}
+        {/* ── 2. Name — single h1 for premium SEO/outline ─────────────────────── */}
         <motion.h1
           initial={{ opacity: 0, y: 36 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.9, delay: 0.25 }}
           className="font-heading font-bold tracking-tight"
-          style={{
-            fontSize: 'clamp(2.8rem, 9vw, 7.5rem)',
-            lineHeight: 1.06,
-            paddingTop: '0.04em',
-            marginBottom: '0.05em',
-            color: '#eef2ff',
-            textShadow: '0 2px 40px rgba(2,10,24,0.9)',
-          }}
+          style={{ lineHeight: 1.06, paddingTop: '0.04em', marginBottom: '0.05em' }}
         >
-          Priastama
+          <span
+            style={{
+              display: 'block',
+              fontSize: 'clamp(2.8rem, 9vw, 7.5rem)',
+              color: '#eef2ff',
+              textShadow: '0 2px 40px rgba(2,10,24,0.9)',
+            }}
+          >
+            Priastama
+          </span>
+          <span
+            aria-hidden="false"
+            style={{
+              display: 'block',
+              fontSize: 'clamp(2.8rem, 9vw, 7.5rem)',
+              lineHeight: 1.2,
+              paddingBottom: '0.28em',
+              marginBottom: 8,
+              background: 'linear-gradient(135deg, #c8a84a 0%, #e8c870 45%, #f0d890 100%)',
+              WebkitBackgroundClip: 'text',
+              WebkitTextFillColor: 'transparent',
+              backgroundClip: 'text',
+              filter: 'drop-shadow(0 0 20px rgba(200,168,74,0.45))',
+            }}
+          >
+            Adiyoga
+          </span>
         </motion.h1>
-
-        <motion.div
-          /* Visual continuation of the name — h1 above provides heading semantics */
-          initial={{ opacity: 0, y: 36 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.9, delay: 0.35 }}
-          className="font-heading font-bold tracking-tight"
-          style={{
-            fontSize: 'clamp(2.8rem, 9vw, 7.5rem)',
-            /*
-             * lineHeight ≥ 1.2 gives descenders (like "g") room inside the
-             * line box. -webkit-background-clip:text clips the gradient to the
-             * computed line box, so anything tighter clips the descender tail.
-             * paddingBottom adds extra space BELOW the baseline so the gradient
-             * renders fully through the descender — this is the canonical fix
-             * for the -webkit-background-clip:text descender-clipping bug.
-             */
-            lineHeight: 1.2,
-            paddingBottom: '0.28em',
-            marginBottom: 8,
-            background: 'linear-gradient(135deg, #c8a84a 0%, #e8c870 45%, #f0d890 100%)',
-            WebkitBackgroundClip: 'text',
-            WebkitTextFillColor: 'transparent',
-            backgroundClip: 'text',
-            filter: 'drop-shadow(0 0 20px rgba(200,168,74,0.45))',
-          }}
-        >
-          Adiyoga
-        </motion.div>
 
         {/* ── 3. Gold rule ──────────────────────────────────────────────────── */}
         <motion.div
@@ -465,9 +457,7 @@ export function Hero() {
           ))}
         </motion.div>
 
-        {/* ── 5. Value proposition — concrete, non-italic, high contrast.
-               Replaces the abstract quoted tagline: states what he does,
-               the proof (8+ yrs incident-free), and the HSE→AI bridge.      */}
+        {/* ── 5. Value proposition — HSE/K3L-first, concrete, high contrast. ── */}
         <motion.p
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
@@ -484,9 +474,9 @@ export function Hero() {
             textShadow: '0 1px 18px rgba(2,10,24,0.85)',
           }}
         >
-          I build safer operations and smarter decision systems — combining
-          8+ years of incident-free mining HSE leadership with enterprise AI
-          orchestration.
+          Saya membangun operasi tambang yang lebih aman melalui sistem K3L,
+          SMKP, HIRADC, dan budaya Zero Accident — 8+ tahun tanpa Lost-Time
+          Incident di site batu bara Kalimantan Timur.
         </motion.p>
 
         {/* ── 6. CTAs ───────────────────────────────────────────────────────── */}
@@ -506,6 +496,7 @@ export function Hero() {
               they are ready to contact. */}
           <button
             onClick={() => scrollTo('experience')}
+            aria-label="Lihat pengalaman HSE dan K3L"
             className="group relative rounded-lg font-bold uppercase overflow-hidden"
             style={{
               padding: '13px 32px',
@@ -536,6 +527,7 @@ export function Hero() {
           {/* Secondary — Contact Me */}
           <button
             onClick={() => scrollTo('contact')}
+            aria-label="Hubungi untuk kebutuhan HSE dan K3L"
             className="rounded-lg font-semibold uppercase transition-colors duration-300"
             style={{
               padding: '13px 32px',

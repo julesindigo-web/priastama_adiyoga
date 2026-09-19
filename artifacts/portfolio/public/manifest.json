@@ -1,11 +1,11 @@
 {
-  "name": "Priastama Adiyoga Portfolio",
-  "short_name": "Priastama",
-  "description": "HSE Manager & AI Orchestrator Portfolio",
+  "name": "Priastama Adiyoga — HSE · K3L · Mining Safety",
+  "short_name": "Priastama HSE",
+  "description": "Mining HSE Manager & SMKP Auditor — 8+ tahun Zero LTI, 30+ sertifikasi K3, pembangun Safety Management System.",
   "start_url": "/",
   "display": "standalone",
-  "background_color": "#0a0a0a",
-  "theme_color": "#f59e0b",
+  "background_color": "#020a18",
+  "theme_color": "#020a18",
   "icons": [
     {
       "src": "/icon.svg",
