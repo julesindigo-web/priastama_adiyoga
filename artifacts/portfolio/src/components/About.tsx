@@ -222,8 +222,6 @@ export function About() {
                   text: 'Spesialis HIRADC, Contractor Safety Management System, investigasi insiden, dan emergency response plan untuk heavy equipment zone dan hauling batubara.',
                 },
               ].map((item, i) => (
-                },
-              ].map((item, i) => (
                 <motion.div
                   key={i}
                   initial={{ opacity: 0, x: 20 }}
