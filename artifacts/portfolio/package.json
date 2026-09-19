@@ -74,5 +74,12 @@
     "wouter": "^3.3.5",
     "zod": "catalog:"
   },
-  "dependencies": {},
+  "dependencies": {
+    "@react-three/drei": "^10.7.7",
+    "@react-three/fiber": "^9.6.1",
+    "@react-three/postprocessing": "^3.0.4",
+    "@types/three": "^0.185.1",
+    "postprocessing": "^6.39.2",
+    "three": "^0.185.1"
+  }
 }
