@@ -101,7 +101,7 @@ export function Skills() {
                 <h3 className="font-heading font-bold text-xl" style={{ color: cat.color }}>
                   {cat.title}
                 </h3>
-                <div className="ml-auto text-xs font-mono" style={{ color: `${cat.color}70`, fontFamily: 'Inter, sans-serif' }}>
+                <div className="ml-auto text-xs" style={{ color: `${cat.color}70`, fontFamily: 'Inter, sans-serif' }}>
                   {cat.skills.length} kompetensi
                 </div>
               </div>

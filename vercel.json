@@ -27,7 +27,7 @@
       ]
     },
     {
-      "source": "/(favicon\\.svg|icon\\.svg|manifest\\.json|robots\\.txt|brand-pa-mark\\.png)",
+      "source": "/(favicon\\.svg|icon\\.svg|manifest\\.json|robots\\.txt|brand-pa-nav\\.png)",
       "headers": [
         { "key": "Cache-Control", "value": "public, max-age=86400" }
       ]

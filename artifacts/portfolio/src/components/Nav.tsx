@@ -63,22 +63,21 @@ export function Nav() {
         }}
       >
         <div className="container mx-auto px-6 flex justify-between items-center">
-          {/* Brand mark — real gold PA artwork, screen-blended so it fuses with the bar */}
+          {/* Brand — real gold PA lockup artwork, screen-blended so it fuses with the bar */}
           <button
             onClick={() => scrollTo('hero')}
             aria-label="Kembali ke beranda portfolio HSE Priastama Adiyoga"
-            className="flex items-center gap-2.5 font-display font-bold text-lg tracking-widest hover:opacity-80 transition-opacity"
+            className="flex items-center hover:opacity-80 transition-opacity"
           >
             <img
-              src="/brand-pa-mark.png"
+              src="/brand-pa-nav.png"
               alt=""
               aria-hidden="true"
-              width={47}
-              height={34}
+              width={62}
+              height={38}
               decoding="async"
-              style={{ display: 'block', width: 47, height: 34, flexShrink: 0, mixBlendMode: 'screen', borderRadius: 6 }}
+              style={{ display: 'block', width: 62, height: 38, flexShrink: 0, mixBlendMode: 'screen', borderRadius: 6 }}
             />
-            <span style={{ color: 'rgba(238,242,255,0.88)' }}>Adiyoga</span>
           </button>
 
           {/* Desktop nav */}
