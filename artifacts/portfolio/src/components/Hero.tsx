@@ -77,6 +77,9 @@ export function Hero() {
 
   useEffect(() => {
     const canvas = canvasRef.current;
+    // The canvas element is unconditionally rendered above; null is only
+    // possible if the React ref API itself fails.
+    /* v8 ignore next */
     if (!canvas) return;
     const ctx = canvas.getContext('2d')!;
 

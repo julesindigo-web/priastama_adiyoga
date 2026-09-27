@@ -43,7 +43,7 @@ const contacts = [
     Icon: MapPin,
     label: 'Samarinda, Kalimantan Timur — Siap onsite site',
     href: null,
-    aria: null,
+    aria: 'Lokasi HSE Samarinda, Kalimantan Timur — siap onsite site',
     color: 'rgba(216,228,252,0.6)',
   },
 ];
@@ -147,11 +147,11 @@ export function Contact() {
                 );
 
                 return c.href ? (
-                  <a key={i} href={c.href} aria-label={c.aria || c.label} target={c.external ? '_blank' : undefined} rel={c.external ? 'noreferrer' : undefined}>
+                  <a key={i} href={c.href} aria-label={c.aria} target={c.external ? '_blank' : undefined} rel={c.external ? 'noreferrer' : undefined}>
                     {inner}
                   </a>
                 ) : (
-                  <div key={i} aria-label={c.label}>{inner}</div>
+                  <div key={i} aria-label={c.aria}>{inner}</div>
                 );
               })}
             </div>
