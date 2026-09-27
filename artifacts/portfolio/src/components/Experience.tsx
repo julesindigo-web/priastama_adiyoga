@@ -32,7 +32,7 @@ const experiences = [
     role: 'Senior HSE Staff',
     period: 'Okt 2023 – Jul 2024',
     tag: 'Zero LTI',
-    tagColor: '#4da6ff',
+    tagColor: '#7ab8ff',
     color: '#c8a84a',
     description: [
       'Merancang dan menerapkan Sistem Manajemen K3L lengkap dari nol',

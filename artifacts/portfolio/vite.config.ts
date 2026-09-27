@@ -3,7 +3,7 @@ import react from '@vitejs/plugin-react';
 import tailwindcss from '@tailwindcss/vite';
 import { defineConfig } from 'vite';
 
-// ─── Environment resolution ────────────────────────────────────────────────────
+// --- Environment resolution ---
 // PORT is only required in dev/preview mode; Vercel build never uses it.
 const isProduction = process.env.NODE_ENV === 'production';
 const isReplitEnv  = Boolean(process.env.REPL_ID);
@@ -24,7 +24,7 @@ if (!process.env.BASE_PATH && !isProduction) {
   throw new Error('BASE_PATH environment variable is required but was not provided.');
 }
 
-// ─── Replit-specific plugins (dev only) ───────────────────────────────────────
+// --- Replit-specific plugins (dev only) ---
 const replitPlugins =
   !isProduction && isReplitEnv
     ? await Promise.all([
@@ -36,7 +36,7 @@ const replitPlugins =
       ])
     : [];
 
-// ──────────────────────────────────────────────────────────────────────────────
+// --- Vite config ---
 export default defineConfig({
   base: basePath,
   plugins: [

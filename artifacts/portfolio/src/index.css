@@ -252,16 +252,16 @@
     color: #eef2ff;
   }
 
-  /* ── Thin gold-tinted scrollbar (Chromium / WebKit) ─────────────────────── */
+  /* -- Gold-tinted scrollbar (Chromium / WebKit) : 8px for visibility + premium feel -- */
   ::-webkit-scrollbar {
-    width: 4px;
+    width: 8px;
   }
   ::-webkit-scrollbar-track {
     background: #020a18;
   }
   ::-webkit-scrollbar-thumb {
     background: rgba(200, 168, 74, 0.32);
-    border-radius: 2px;
+    border-radius: 4px;
   }
   ::-webkit-scrollbar-thumb:hover {
     background: rgba(200, 168, 74, 0.62);

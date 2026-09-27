@@ -36,7 +36,7 @@ const contacts = [
     label: '+62 822-1359-5760 (WhatsApp)',
     href: 'https://wa.me/6282213595760',
     aria: 'Hubungi WhatsApp HSE +62 822-1359-5760',
-    color: '#3a9e8a',
+    color: '#2a7fff',
     external: true,
   },
   {
@@ -84,6 +84,7 @@ export function Contact() {
               budaya selamat.
             </span>
           </h2>
+          <div className="mt-4 mx-auto" style={{ width: 80, height: 2, background: 'linear-gradient(90deg,#c8a84a,#2a7fff)' }} />
           <p
             className="mt-6 text-base max-w-lg mx-auto font-light"
             style={{ color: 'rgba(216,228,252,0.66)', fontFamily: 'Inter, sans-serif', lineHeight: 1.7 }}

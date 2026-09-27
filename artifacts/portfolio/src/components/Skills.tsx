@@ -16,9 +16,9 @@ const categories = [
   {
     title: 'K3L, SMKP & Kepatuhan Regulasi',
     Icon: ClipboardCheck,
-    color: '#a89fd4',
-    gradient: 'linear-gradient(135deg, rgba(168,159,212,0.1) 0%, rgba(168,159,212,0.02) 100%)',
-    border: 'rgba(168,159,212,0.18)',
+    color: '#7ab8ff',
+    gradient: 'linear-gradient(135deg, rgba(42,127,255,0.1) 0%, rgba(42,127,255,0.02) 100%)',
+    border: 'rgba(42,127,255,0.18)',
     skills: [
       'SMKP Pertambangan', 'Kepatuhan Regulasi ESDM', 'Legal Drafting K3L', 'CSMS',
       'Dokumentasi & SOP K3L', 'Audit Internal SMKP', 'Advokat PERADI',
@@ -38,9 +38,9 @@ const categories = [
   {
     title: 'Kepemimpinan Budaya K3L',
     Icon: HeartHandshake,
-    color: '#3a9e8a',
-    gradient: 'linear-gradient(135deg, rgba(58,158,138,0.1) 0%, rgba(58,158,138,0.02) 100%)',
-    border: 'rgba(58,158,138,0.18)',
+    color: '#c8a84a',
+    gradient: 'linear-gradient(135deg, rgba(200,168,74,0.1) 0%, rgba(200,168,74,0.02) 100%)',
+    border: 'rgba(200,168,74,0.18)',
     skills: [
       'Safety Leadership', 'Pembinaan Pekerja & Kontraktor', 'Kampanye Bulan K3 Nasional',
       'Continuous Improvement K3L', 'Analytical Problem Solving',

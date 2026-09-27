@@ -23,7 +23,7 @@ const identities = [
   {
     Icon: Scale,
     title: 'SMKP & Kepatuhan K3L',
-    color: '#a89fd4',
+    color: '#7ab8ff',
     desc: 'Sarjana Hukum (S.H.) + Advokat PERADI — presisi hukum untuk arsitektur kepatuhan SMKP, regulasi ESDM, dan audit K3L.',
   },
   {
@@ -36,7 +36,7 @@ const identities = [
 
 export function About() {
   return (
-    <section id="about" className="py-24 md:py-36 relative overflow-hidden" style={{ background: '#020a18' }}>
+    <section id="about" className="py-36 relative overflow-hidden" style={{ background: '#020a18' }}>
       {/* Background glows */}
       <div className="absolute top-0 right-0 w-[600px] h-[600px] rounded-full pointer-events-none"
         style={{ background: 'radial-gradient(ellipse, rgba(200,168,74,0.06) 0%, transparent 70%)', filter: 'blur(40px)' }} />
@@ -50,10 +50,10 @@ export function About() {
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          className="mb-20 text-center"
+          className="mb-24 text-center"
         >
           <span className="text-xs tracking-[0.3em] uppercase font-semibold mb-4 block" style={{ color: '#c8a84a', fontFamily: 'Inter, sans-serif' }}>
-            — Who I Am —
+            — Profil HSE —
           </span>
           <h2 className="font-heading font-bold tracking-tight" style={{ fontSize: 'clamp(2.2rem,5vw,4rem)', lineHeight: 1.2, color: '#eef2ff' }}>
             Bridging the{' '}
@@ -211,7 +211,7 @@ export function About() {
                 },
                 {
                   Icon: ClipboardCheck,
-                  color: '#a89fd4',
+                  color: '#7ab8ff',
                   label: 'SMKP & Kepatuhan Regulasi',
                   text: 'Sarjana Hukum (S.H.) dan Advokat PERADI — merancang arsitektur kepatuhan SMKP, audit internal, dan dokumentasi K3L yang lolos audit eksternal tanpa temuan mayor.',
                 },

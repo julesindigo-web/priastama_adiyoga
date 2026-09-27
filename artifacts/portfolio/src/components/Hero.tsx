@@ -4,7 +4,7 @@ import { motion } from 'framer-motion';
 // ─── Royal Night palette ──────────────────────────────────────────────────────
 // Navy:   #020a18 | #04101e | #061228
 // Gold:   #c8a84a | #d4b558 | #e8c870
-// Blue:   #2a7fff | #4da6ff | #7ab8ff
+// Blue:   #2a7fff | #7ab8ff
 // Text:   #eef2ff | rgba(210,225,255,0.75)
 
 type Sparkle = {
@@ -265,9 +265,9 @@ export function Hero() {
     // overflow-hidden clips absolute decorative layers to the section boundary.
     <section id="hero" className="hero-section relative w-full overflow-hidden">
 
-      {/* ── Layer 0 · reference photo background ──────────────────────────── */}
+      {/* Layer 0 : optimized JPG background (114KB) - PNG original preserved in git history */}
       <img
-        src="/photos/royal-night-bg.png"
+        src="/photos/royal-night-bg.jpg"
         alt=""
         aria-hidden="true"
         fetchPriority="high"
