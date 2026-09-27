@@ -23,7 +23,7 @@ const experiences = [
     tagColor: '#c8a84a',
     color: '#c8a84a',
     description: [
-      'Membangun Safety Management System lengkap dari nol untuk proyek hauling batubara Tabang–Senyiur Bayan Group',
+      'Membangun Safety Management System lengkap dari nol untuk proyek coal mining dan coal hauling Tabang–Senyiur Bayan Group',
       'Mempertahankan operasi tanpa insiden di lingkungan subkontraktor high-risk',
     ],
   },
@@ -48,7 +48,7 @@ const experiences = [
     tagColor: '#c8a84a',
     color: '#c8a84a',
     description: [
-      'Mengelola dokumentasi keselamatan end-to-end di salah satu site tambang batu bara terbesar Indonesia',
+      'Mengelola dokumentasi keselamatan end-to-end di salah satu site coal mining terbesar Indonesia',
       'Mempertahankan 100% SOP aktual di seluruh site selama 6 tahun',
       'Membangun dan mempertahankan budaya Zero Accident lintas siklus operasi',
       'Penghargaan Ketua Panitia Terbaik — Bulan K3 Nasional 2023 oleh PT. Bayan Resources Tabang',
@@ -59,7 +59,7 @@ const experiences = [
 const fieldPhotos = [
   { src: '/photos/mining-inspection.jpg', caption: 'Inspeksi K3L Lapangan',   sub: 'Audit HSE & SMKP di site tambang' },
   { src: '/photos/mining-panorama.jpg',   caption: 'Pengawasan Site',      sub: 'Surveillance operasi & bahaya' },
-  { src: '/photos/mining-work.jpg',       caption: 'Operasi Aktif',   sub: 'Zona heavy equipment & hauling' },
+  { src: '/photos/mining-work.jpg',       caption: 'Operasi Aktif',   sub: 'Zona heavy equipment, hauling & mining' },
 ];
 
 export function Experience() {

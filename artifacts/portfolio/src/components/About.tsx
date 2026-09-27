@@ -7,7 +7,7 @@ import { HardHat, Scale, ShieldCheck, ClipboardCheck, Siren } from 'lucide-react
 // Navy bg: #020a18
 
 const stats = [
-  { value: '8+',    label: 'Tahun di HSE & K3L',     color: '#c8a84a' },
+  { value: '9+',    label: 'Tahun di HSE & K3L',     color: '#c8a84a' },
   { value: 'SMKP',  label: 'Auditor Tersertifikasi', color: '#7ab8ff' },
   { value: '30+',   label: 'Sertifikasi K3',         color: '#c8a84a' },
   { value: 'Zero',  label: 'Lost-Time Incidents',    color: '#7ab8ff' },
@@ -18,7 +18,7 @@ const identities = [
     Icon: HardHat,
     title: 'Mining HSE Expert',
     color: '#c8a84a',
-    desc: '8+ tahun operasi batu bara bersama Bayan Resources Group di Kalimantan Timur — safety leadership di high-risk environment.',
+    desc: '9+ tahun operasi coal mining, coal hauling, dan andesite mining bersama Bayan Resources Group di Kalimantan Timur — safety leadership di high-risk environment.',
   },
   {
     Icon: Scale,
@@ -207,7 +207,7 @@ export function About() {
                   Icon: HardHat,
                   color: '#c8a84a',
                   label: 'Keahlian Lapangan K3L',
-                  text: '8+ tahun membangun dan mempertahankan sistem HSE di operasi batu bara Kalimantan — di mana satu kelalaian bisa fatal dan Zero LTI adalah satu-satunya target.',
+                  text: '9+ tahun membangun dan mempertahankan sistem HSE di operasi coal mining, coal hauling, dan andesite mining Kalimantan — di mana satu kelalaian bisa fatal dan Zero LTI adalah satu-satunya target.',
                 },
                 {
                   Icon: ClipboardCheck,
@@ -219,7 +219,7 @@ export function About() {
                   Icon: Siren,
                   color: '#7ab8ff',
                   label: 'HIRADC · CSMS · Tanggap Darurat',
-                  text: 'Spesialis HIRADC, Contractor Safety Management System, investigasi insiden, dan emergency response plan untuk heavy equipment zone dan hauling batubara.',
+                  text: 'Spesialis HIRADC, Contractor Safety Management System, investigasi insiden, dan emergency response plan untuk heavy equipment zone di coal mining, coal hauling, dan andesite mining.',
                 },
               ].map((item, i) => (
                 <motion.div

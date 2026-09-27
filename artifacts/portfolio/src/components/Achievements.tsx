@@ -11,12 +11,12 @@ const achievements = [
     border: 'rgba(200,168,74,0.28)',
     photo: '/photos/safety-event.jpg',
     description:
-      'Dipercaya memimpin Bulan K3 Nasional di salah satu grup tambang batu bara terbesar Indonesia — mengorkestrasi kampanye Zero Accident lintas site PT. Bayan Resources Tabang.',
+      'Dipercaya memimpin Bulan K3 Nasional di salah satu grup coal mining terbesar Indonesia — mengorkestrasi kampanye Zero Accident lintas site PT. Bayan Resources Tabang.',
   },
   {
     Icon: ShieldCheck,
     title: 'Zero Accident Record',
-    subtitle: '8+ Tahun · Tanpa LTI',
+    subtitle: '9+ Tahun · Tanpa LTI',
     color: '#2a7fff',
     gradient: 'linear-gradient(135deg, rgba(42,127,255,0.12) 0%, rgba(42,127,255,0.03) 100%)',
     border: 'rgba(42,127,255,0.25)',

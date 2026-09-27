@@ -249,7 +249,7 @@ export function Hero() {
     document.getElementById(id)?.scrollIntoView({ behavior: 'smooth' });
 
   const stats = [
-    { value: '8+',  label: 'Tahun di HSE & K3L',   blue: false },
+    { value: '9+',  label: 'Tahun di HSE & K3L',   blue: false },
     { value: '0',   label: 'Lost-Time Incidents', blue: true  },
     { value: '30+', label: 'Sertifikasi K3',      blue: false },
   ];
@@ -475,8 +475,9 @@ export function Hero() {
           }}
         >
           Saya membangun operasi tambang yang lebih aman melalui sistem K3L,
-          SMKP, HIRADC, dan budaya Zero Accident — 8+ tahun tanpa Lost-Time
-          Incident di site batu bara Kalimantan Timur.
+          SMKP, HIRADC, dan budaya Zero Accident — 9+ tahun tanpa Lost-Time
+          Incident di site coal mining, coal hauling, dan andesite mining
+          Kalimantan Timur.
         </motion.p>
 
         {/* ── 6. CTAs ───────────────────────────────────────────────────────── */}

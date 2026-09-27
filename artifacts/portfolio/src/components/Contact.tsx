@@ -91,7 +91,7 @@ export function Contact() {
           >
             Bagi organisasi yang menempatkan keselamatan sebagai prioritas — mari
             membangun sistem K3L yang lolos audit dan budaya Zero Accident yang
-            bertahan, didukung 8+ tahun pengalaman lapangan.
+            bertahan, didukung 9+ tahun pengalaman lapangan.
           </p>
         </motion.div>
 

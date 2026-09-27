@@ -552,7 +552,7 @@ export function RoyalNight() {
           }}
         >
           {[
-            { v: "8+", l: "Years HSE" },
+            { v: "9+", l: "Years HSE" },
             { v: "0", l: "LTI Record" },
             { v: "30+", l: "Certifications" },
           ].map((s, i) => (
