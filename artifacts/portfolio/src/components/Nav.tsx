@@ -63,20 +63,38 @@ export function Nav() {
         }}
       >
         <div className="container mx-auto px-6 flex justify-between items-center">
-          {/* Logo */}
+          {/* Brand mark — gold PA monogram, transparent so it fuses with the bar */}
           <button
             onClick={() => scrollTo('hero')}
             aria-label="Kembali ke beranda portfolio HSE Priastama Adiyoga"
-            className="flex items-center gap-2.5 font-heading font-bold text-lg tracking-widest hover:opacity-80 transition-opacity"
+            className="flex items-center gap-2.5 font-display font-bold text-lg tracking-widest hover:opacity-80 transition-opacity"
           >
             <span
-              className="w-8 h-8 rounded-lg flex items-center justify-center text-sm font-black"
-              style={{
-                background: 'linear-gradient(135deg, #c8a84a, #e8c870)',
-                color: '#06101e',
-              }}
+              aria-hidden="true"
+              style={{ display: 'inline-flex', width: 34, height: 34, flexShrink: 0 }}
             >
-              P
+              <svg width="34" height="34" viewBox="0 0 36 36" fill="none" role="presentation" style={{ display: 'block' }}>
+                <defs>
+                  <linearGradient id="nav-pa-gold" x1="6" y1="6" x2="30" y2="30" gradientUnits="userSpaceOnUse">
+                    <stop offset="0" stopColor="#f0d890" />
+                    <stop offset="0.5" stopColor="#c8a84a" />
+                    <stop offset="1" stopColor="#9a7a2e" />
+                  </linearGradient>
+                </defs>
+                <text
+                  x="18"
+                  y="24.5"
+                  textAnchor="middle"
+                  fontFamily="'Cormorant Garamond', Georgia, serif"
+                  fontWeight="700"
+                  fontSize="21"
+                  letterSpacing="-1.5"
+                  fill="url(#nav-pa-gold)"
+                >
+                  PA
+                </text>
+                <rect x="8" y="28.5" width="20" height="1.2" rx="0.6" fill="url(#nav-pa-gold)" opacity="0.9" />
+              </svg>
             </span>
             <span style={{ color: 'rgba(238,242,255,0.88)' }}>Adiyoga</span>
           </button>

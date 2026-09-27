@@ -60,6 +60,7 @@
   --font-serif: var(--app-font-serif);
   --font-mono: var(--app-font-mono);
   --font-heading: 'Syne', sans-serif;
+  --font-display: 'Cormorant Garamond', Georgia, serif;
 
   --radius-sm: calc(var(--radius) - 4px);
   --radius-md: calc(var(--radius) - 2px);

@@ -1,6 +1,13 @@
 <svg width="180" height="180" viewBox="0 0 180 180" fill="none" xmlns="http://www.w3.org/2000/svg">
+<defs>
+<linearGradient id="paGold" x1="40" y1="30" x2="140" y2="150" gradientUnits="userSpaceOnUse">
+<stop offset="0" stop-color="#f0d890"/>
+<stop offset="0.5" stop-color="#c8a84a"/>
+<stop offset="1" stop-color="#9a7a2e"/>
+</linearGradient>
+</defs>
 <rect width="180" height="180" rx="40" fill="#020a18"/>
 <rect x="3" y="3" width="174" height="174" rx="37" fill="none" stroke="#c8a84a" stroke-opacity="0.4" stroke-width="2"/>
-<text x="50%" y="55%" dominant-baseline="middle" text-anchor="middle" font-family="Syne, Inter, sans-serif" font-size="84" font-weight="800" fill="#e8c870">P</text>
-<rect x="55" y="134" width="70" height="4" rx="2" fill="#c8a84a"/>
+<text x="90" y="108" text-anchor="middle" font-family="Georgia, 'Times New Roman', serif" font-size="76" font-weight="700" letter-spacing="-3" fill="url(#paGold)">PA</text>
+<rect x="55" y="128" width="70" height="4" rx="2" fill="#c8a84a"/>
 </svg>

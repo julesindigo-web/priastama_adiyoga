@@ -353,13 +353,16 @@ export function Hero() {
           initial={{ opacity: 0, y: 36 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.9, delay: 0.25 }}
-          className="font-heading font-bold tracking-tight"
-          style={{ lineHeight: 1.06, paddingTop: '0.04em', marginBottom: '0.05em' }}
+          className="font-display font-semibold tracking-tight"
+          style={{ lineHeight: 1.14, paddingTop: '0.02em', paddingBottom: '0.1em', marginBottom: '0.05em', overflow: 'visible' }}
         >
           <span
             style={{
               display: 'block',
               fontSize: 'clamp(2.8rem, 9vw, 7.5rem)',
+              fontWeight: 600,
+              lineHeight: 1.14,
+              letterSpacing: '0.01em',
               color: '#eef2ff',
               textShadow: '0 2px 40px rgba(2,10,24,0.9)',
             }}
@@ -371,9 +374,12 @@ export function Hero() {
             style={{
               display: 'block',
               fontSize: 'clamp(2.8rem, 9vw, 7.5rem)',
-              lineHeight: 1.2,
-              paddingBottom: '0.28em',
+              fontStyle: 'italic',
+              fontWeight: 600,
+              lineHeight: 1.22,
+              paddingBottom: '0.16em',
               marginBottom: 8,
+              overflow: 'visible',
               background: 'linear-gradient(135deg, #c8a84a 0%, #e8c870 45%, #f0d890 100%)',
               WebkitBackgroundClip: 'text',
               WebkitTextFillColor: 'transparent',
