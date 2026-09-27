@@ -87,7 +87,7 @@ export function Contact() {
           <div className="mt-4 mx-auto" style={{ width: 80, height: 2, background: 'linear-gradient(90deg,#c8a84a,#2a7fff)' }} />
           <p
             className="mt-6 text-base max-w-lg mx-auto font-light"
-            style={{ color: 'rgba(216,228,252,0.66)', fontFamily: 'Inter, sans-serif', lineHeight: 1.7 }}
+            style={{ color: 'rgba(216,228,252,0.66)', fontFamily: 'Inter, sans-serif', lineHeight: 1.68 }}
           >
             Bagi organisasi yang menempatkan keselamatan sebagai prioritas — mari
             membangun sistem K3L yang lolos audit dan budaya Zero Accident yang
